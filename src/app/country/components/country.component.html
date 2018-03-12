@@ -1,0 +1,14 @@
+<div class="country-wrapper">
+  <div *ngIf="country != null">
+    <app-country-header [country]="country"></app-country-header>
+    <app-country-content-v2
+      *appFeatureIf="'COUNTRY_CONTENT';country:country"
+      [country]="country"></app-country-content-v2>
+    <div class="no-feature" *appFeatureElse="'COUNTRY_CONTENT';country:country">
+      This feature is not yet available in {{country.name}}.
+    </div>
+  </div>
+  <div class="no-country" *ngIf="country == null">
+    Please select a country.
+  </div>
+</div>

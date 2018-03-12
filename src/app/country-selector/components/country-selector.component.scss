@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.country-selector {
+  flex: auto;
+  text-align: center;
+}

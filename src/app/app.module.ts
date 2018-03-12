@@ -1,18 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-
+import { CountrySelectorComponent } from './country-selector/components/country-selector.component';
+import { CountryComponent } from './country/components/country.component';
+import { CountryHeaderComponent } from './country/components/country-header/country-header.component';
+import { CountryContentV1Component } from './country/components/country-content/v1/country-content.v1.component';
+import { CountryContentV2Component } from './country/components/country-content/v2/country-content.v2.component';
+import { CountryConfigService } from './common/services/country-config/country-config.service';
+import { FeatureIfDirective } from './common/directives/feture-if/feature-if.directive';
+import { FeatureElseDirective } from './common/directives/feature-else/feature-else.directive';
+import { CountryService } from './common/services/country/country.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CountrySelectorComponent,
+    CountryComponent,
+    CountryHeaderComponent,
+    CountryContentV1Component,
+    CountryContentV2Component,
+    FeatureIfDirective,
+    FeatureElseDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    CountryConfigService,
+    CountryService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

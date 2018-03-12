@@ -1,0 +1,7 @@
+<div class="country-selector">
+  <label for="country">Country: </label>
+  <select name="country" [(ngModel)]="selectedCountry" (change)="onCountryChange()">
+    <option disabled hidden [value]="undefined">-- select --</option>
+    <option *ngFor="let c of countries" [ngValue]="c">{{c.name}}</option>
+  </select>
+</div>
