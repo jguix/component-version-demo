@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { CountryConfig, DEFAULT_COUNTRY_CONFIG, FeatureVersion } from './country-config.model';
+import { CountryConfigDictionary, DEFAULT_COUNTRY_CONFIG, FeatureVersionDictionary } from './country-config.model';
 import { Country } from '../country/country.model';
 
 @Injectable()
 export class CountryConfigService {
-  private config: CountryConfig = DEFAULT_COUNTRY_CONFIG;
+  private config: CountryConfigDictionary = DEFAULT_COUNTRY_CONFIG;
 
-  getCountryFeatures(country: Country): FeatureVersion {
+  getCountryFeatures(country: Country): FeatureVersionDictionary {
     return this.config[country.code].features;
   }
 

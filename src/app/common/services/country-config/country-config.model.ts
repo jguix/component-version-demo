@@ -1,19 +1,19 @@
-export interface CountryConfig {
-  [key: string]: {
-    features: FeatureVersion;
-  };
-}
-
-export interface FeatureVersion {
+export interface FeatureVersionDictionary {
   [key: string]: number;
 }
 
-export const FEATURES = {
-  COUNTRY_HEADER: 'COUNTRY_HEADER',
-  COUNTRY_CONTENT: 'COUNTRY_CONTENT'
-};
+export interface CountryConfigDictionary {
+  [key: string]: {
+    features: FeatureVersionDictionary;
+  };
+}
 
-export const DEFAULT_COUNTRY_CONFIG: CountryConfig = {
+export enum FeatureType {
+  COUNTRY_HEADER = 'COUNTRY_HEADER',
+  COUNTRY_CONTENT = 'COUNTRY_CONTENT'
+}
+
+export const DEFAULT_COUNTRY_CONFIG: CountryConfigDictionary = {
   'es': {
     features: {
       'COUNTRY_HEADER': 2,

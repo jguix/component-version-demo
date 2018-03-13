@@ -1,4 +1,4 @@
-import { ComponentFactoryResolver, Directive, Input, OnChanges, SimpleChanges, ViewContainerRef } from '@angular/core';
+import { ComponentFactoryResolver, Directive, Input, OnChanges, SimpleChanges, Type, ViewContainerRef } from '@angular/core';
 import { CountryConfigService } from '../../services/country-config/country-config.service';
 import { Country } from '../../services/country/country.model';
 import { DynamicComponentService } from '../../services/dynamic-component/dynamic-component.service';
@@ -11,7 +11,6 @@ import { CountryComponent } from '../../../country/components/country.component'
 export class FeatureVersionDirective implements OnChanges {
   private _featureName: string;
   private _country: Country;
-  // private _hasView: boolean;
 
   @Input() set appFeatureVersion(featureName: string) {
     this._featureName = featureName;
@@ -22,7 +21,7 @@ export class FeatureVersionDirective implements OnChanges {
     this._country = value;
   }
 
-  constructor(public viewContainerRef: ViewContainerRef,
+  constructor(private viewContainerRef: ViewContainerRef,
               private countryConfigService: CountryConfigService,
               private dynamicComponentService: DynamicComponentService,
               private componentFactoryResolver: ComponentFactoryResolver) { }
@@ -47,8 +46,8 @@ export class FeatureVersionDirective implements OnChanges {
     this.viewContainerRef.clear();
   }
 
-  private embedComponent(dynamicComponent: DynamicComponent): void {
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(dynamicComponent.component);
+  private embedComponent(component: Type<any>): void {
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
     const componentRef = this.viewContainerRef.createComponent(componentFactory);
     (<CountryComponent>componentRef.instance).country = this._country;
   }

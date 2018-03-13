@@ -1,20 +1,13 @@
 import { Injectable } from '@angular/core';
-import { DEFAULT_DYNAMIC_COMPONENT_LIST, DynamicComponent } from "./dynamic-component.model";
+import { DEFAULT_DYNAMIC_COMPONENT_DICTIONARY, DynamicComponentDictionary } from './dynamic-component.model';
 
 @Injectable()
 export class DynamicComponentService {
-  private componentList: Array<DynamicComponent> = DEFAULT_DYNAMIC_COMPONENT_LIST;
-
-  constructor() { }
+  private componentDictionary: DynamicComponentDictionary = DEFAULT_DYNAMIC_COMPONENT_DICTIONARY;
 
   getComponent(featureName: string, version: number) {
-    let selectedComponent: DynamicComponent;
-    this.componentList.forEach(dynamicComponent => {
-      if (dynamicComponent.featureName === featureName &&
-        dynamicComponent.version === version) {
-        selectedComponent = dynamicComponent;
-      }
-    });
+    const selectedComponent = this.componentDictionary[featureName] ?
+       this.componentDictionary[featureName][version] : undefined;
     return selectedComponent;
   }
 }
