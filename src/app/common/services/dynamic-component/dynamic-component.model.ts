@@ -8,7 +8,7 @@ export class DynamicComponent {
 
 export interface DynamicComponentDictionary {
   [key: string]: {
-    [key: number]: Type<any>;
+    [key: number]: Type<DynamicComponent>;
   };
 }
 
