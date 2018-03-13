@@ -27,7 +27,7 @@ export class FeatureIfDirective implements OnChanges {
   }
 
   constructor(private templateRef: TemplateRef<any>,
-              private viewContainer: ViewContainerRef,
+              private viewContainerRef: ViewContainerRef,
               private countryConfigService: CountryConfigService) {
   }
 
@@ -49,10 +49,10 @@ export class FeatureIfDirective implements OnChanges {
 
   private embedTemplate(enabled): void {
     if (enabled && !this._hasView) {
-      this.viewContainer.createEmbeddedView(this.templateRef);
+      this.viewContainerRef.createEmbeddedView(this.templateRef);
       this._hasView = true;
     } else if (!enabled && this._hasView) {
-      this.viewContainer.clear();
+      this.viewContainerRef.clear();
       this._hasView = false;
     }
   }

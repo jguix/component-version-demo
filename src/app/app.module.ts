@@ -8,9 +8,11 @@ import { CountryHeaderComponent } from './country/components/country-header/coun
 import { CountryContentV1Component } from './country/components/country-content/v1/country-content.v1.component';
 import { CountryContentV2Component } from './country/components/country-content/v2/country-content.v2.component';
 import { CountryConfigService } from './common/services/country-config/country-config.service';
+import { CountryService } from './common/services/country/country.service';
 import { FeatureIfDirective } from './common/directives/feture-if/feature-if.directive';
 import { FeatureElseDirective } from './common/directives/feature-else/feature-else.directive';
-import { CountryService } from './common/services/country/country.service';
+import { FeatureVersionDirective } from './common/directives/feature-version/feature-version.directive';
+import { DynamicComponentService } from './common/services/dynamic-component/dynamic-component.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,12 @@ import { CountryService } from './common/services/country/country.service';
     CountryContentV1Component,
     CountryContentV2Component,
     FeatureIfDirective,
-    FeatureElseDirective
+    FeatureElseDirective,
+    FeatureVersionDirective
+  ],
+  entryComponents: [
+    CountryContentV1Component,
+    CountryContentV2Component
   ],
   imports: [
     BrowserModule,
@@ -29,7 +36,8 @@ import { CountryService } from './common/services/country/country.service';
   ],
   providers: [
     CountryConfigService,
-    CountryService
+    CountryService,
+    DynamicComponentService
   ],
   bootstrap: [AppComponent]
 })

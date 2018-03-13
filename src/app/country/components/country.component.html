@@ -1,9 +1,10 @@
 <div class="country-wrapper">
   <div *ngIf="country != null">
     <app-country-header [country]="country"></app-country-header>
-    <app-country-content-v2
-      *appFeatureIf="'COUNTRY_CONTENT';country:country"
-      [country]="country"></app-country-content-v2>
+    <ng-template *appFeatureVersion="'COUNTRY_CONTENT';country:country"></ng-template>
+    <!--<app-country-content-v2-->
+      <!--*appFeatureIf="'COUNTRY_CONTENT';country:country"-->
+      <!--[country]="country"></app-country-content-v2>-->
     <div class="no-feature" *appFeatureElse="'COUNTRY_CONTENT';country:country">
       This feature is not yet available in {{country.name}}.
     </div>

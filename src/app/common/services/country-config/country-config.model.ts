@@ -17,7 +17,7 @@ export const DEFAULT_COUNTRY_CONFIG: CountryConfig = {
   'es': {
     features: {
       'COUNTRY_HEADER': 2,
-      'COUNTRY_CONTENT': 1,
+      'COUNTRY_CONTENT': 2,
     }
   },
   'fr': {
@@ -27,6 +27,12 @@ export const DEFAULT_COUNTRY_CONFIG: CountryConfig = {
     }
   },
   'it': {
+    features: {
+      'COUNTRY_HEADER': 2,
+      'COUNTRY_CONTENT': 1,
+    }
+  },
+  'uk': {
     features: {
       'COUNTRY_HEADER': 1,
     }

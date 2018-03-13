@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Country} from './country-selector/country.model';
+import { Country } from './common/services/country/country.model';
 
 @Component({
   selector: 'app-root',
