@@ -1,3 +1,7 @@
+/**
+ * First 4 fields are required, since they were included in version 1 of the components
+ * Last 2 fields were added in version 2, consequently they are optional
+ */
 export interface Country {
   name: string;
   code: string;

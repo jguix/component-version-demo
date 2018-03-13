@@ -1,6 +1,6 @@
-import {Directive, Input, OnChanges, SimpleChanges, TemplateRef, ViewContainerRef} from '@angular/core';
-import {CountryConfigService} from '../../services/country-config/country-config.service';
-import {Country} from '../../services/country/country.model';
+import { Directive, Input, OnChanges, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core';
+import { CountryConfigService } from '../../services/country-config/country-config.service';
+import { Country } from '../../../country/services/country.model';
 
 @Directive({
   selector: '[appFeatureElse]'

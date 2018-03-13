@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Country } from '../../../common/services/country/country.model';
+import { Country } from '../../services/country.model';
 
 @Component({
   selector: 'app-country-header',

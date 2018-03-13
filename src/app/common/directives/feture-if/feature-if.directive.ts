@@ -1,7 +1,7 @@
 import { Directive, Input, OnChanges, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { CountryConfigService } from '../../services/country-config/country-config.service';
-import { Country } from '../../services/country/country.model';
+import { Country } from '../../../country/services/country.model';
 
 @Directive({
   selector: '[appFeatureIf]'

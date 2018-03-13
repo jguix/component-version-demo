@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CountryConfigDictionary, DEFAULT_COUNTRY_CONFIG, FeatureVersionDictionary } from './country-config.model';
-import { Country } from '../country/country.model';
+import { Country } from '../../../country/services/country.model';
 
 @Injectable()
 export class CountryConfigService {

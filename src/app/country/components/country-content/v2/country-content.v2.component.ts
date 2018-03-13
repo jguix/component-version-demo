@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DynamicComponent } from '../../../../common/services/dynamic-component/dynamic-component.model';
-import { Country } from '../../../../common/services/country/country.model';
+import { Country } from '../../../services/country.model';
 
 @Component({
   selector: 'app-country-content-v2',

@@ -9,5 +9,14 @@ export class CountryService {
     return this.countries;
   }
 
+  getCountry(code: string): Country {
+    let foundCountry;
+    this.countries.forEach( (country) => {
+      if (country.code === code) {
+        foundCountry = country;
+      }
+    });
+    return foundCountry;
+  }
 }
 

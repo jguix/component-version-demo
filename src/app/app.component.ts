@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Country } from './common/services/country/country.model';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +6,9 @@ import { Country } from './common/services/country/country.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  selectedCountry: Country;
+  selectedCountryCode: string;
 
-  onCountrySelected(country: Country) {
-    this.selectedCountry = country;
+  onCountryCodeSelected(countryCode: string) {
+    this.selectedCountryCode = countryCode;
   }
 }

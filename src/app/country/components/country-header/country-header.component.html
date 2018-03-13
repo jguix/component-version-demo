@@ -1,4 +1,7 @@
+<!-- Static part of the template, used in all feature versions -->
 <div class="country-title">{{country.name}}</div>
-<div
-  *appFeatureIf="'COUNTRY_HEADER';country:country;version:2"
-  class="flag {{country.code}}"></div>
+
+<!-- Dynamic part of the template -->
+<!-- Only displayed for countries implementing the COUNTRY_HEADER feature with version >= 2 -->
+<div *appFeatureIf="'COUNTRY_HEADER';country:country;version:2"
+     class="flag {{country.code}}"></div>

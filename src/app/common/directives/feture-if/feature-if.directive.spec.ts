@@ -1,5 +1,5 @@
-import { FeatureIfDirective } from './feature-if.directive';
 import { TestBed } from '@angular/core/testing';
+import { FeatureIfDirective } from './feature-if.directive';
 
 describe('AppFeatureIfDirective', () => {
   let directive;

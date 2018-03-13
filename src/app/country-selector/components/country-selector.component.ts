@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { CountryService } from '../../common/services/country/country.service';
-import { Country } from '../../common/services/country/country.model';
+import { CountryOptionService } from '../services/country-option.service';
+import { CountryOption } from '../services/country-option.model';
 
 @Component({
   selector: 'app-country-selector',
@@ -8,17 +8,17 @@ import { Country } from '../../common/services/country/country.model';
   styleUrls: ['./country-selector.component.scss']
 })
 export class CountrySelectorComponent implements OnInit {
-  @Output('countrySelected') countrySelected = new EventEmitter<Country>();
-  selectedCountry: Country;
-  countries: Array<Country>;
+  @Output('countryCodeSelected') countryCodeSelected = new EventEmitter<string>();
+  selectedCountryOption: CountryOption;
+  countryOptions: Array<CountryOption>;
 
-  constructor(private countryService: CountryService) { }
+  constructor(private countryOptionService: CountryOptionService) { }
 
   ngOnInit() {
-    this.countries = this.countryService.getCountryList();
+    this.countryOptions = this.countryOptionService.getCountryOptionList();
   }
 
   onCountryChange() {
-    this.countrySelected.emit(this.selectedCountry);
+    this.countryCodeSelected.emit(this.selectedCountryOption.code);
   }
 }
