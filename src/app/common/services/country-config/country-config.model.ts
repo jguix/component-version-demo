@@ -32,6 +32,12 @@ export const DEFAULT_COUNTRY_CONFIG: CountryConfigDictionary = {
       'COUNTRY_CONTENT': 1,
     }
   },
+  'pt': {
+    features: {
+      'COUNTRY_HEADER': 1,
+      'COUNTRY_CONTENT': 1,
+    }
+  },
   'uk': {
     features: {
       'COUNTRY_HEADER': 1,

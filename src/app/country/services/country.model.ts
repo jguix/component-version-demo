@@ -33,6 +33,13 @@ export const DEFAULT_COUNTRY_LIST: Array<Country> = [{
   capital: 'Roma',
   anthemURL: 'http://www.nationalanthems.info/it.mp3',
 }, {
+  code: 'pt',
+  name: 'Portugal',
+  area: 92090,
+  population: 10562178,
+  capital: 'Lisboa',
+  anthemURL: 'http://www.nationalanthems.info/pt.mp3',
+}, {
   code: 'uk',
   name: 'United Kingdom',
   area: 243610,

@@ -13,6 +13,9 @@ export const DEFAULT_COUNTRY_OPTION_LIST: Array<CountryOption> = [{
   code: 'it',
   name: 'Italy',
 }, {
+  code: 'pt',
+  name: 'Portugal',
+}, {
   code: 'uk',
   name: 'United Kingdom',
 }];
