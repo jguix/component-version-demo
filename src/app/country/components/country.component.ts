@@ -24,10 +24,10 @@ export class CountryComponent implements OnChanges {
       const countryCode = changes.countryCode.currentValue;
       if (countryCode) {
         this.country = this.countryService.getCountry(countryCode);
-        const headerVersion: string = this.countryConfigService.isFeatureEnabled(FeatureType.COUNTRY_HEADER, this.country) ?
-          'v' + this.countryConfigService.getFeatureVersion(FeatureType.COUNTRY_HEADER, this.country).toString() : 'UNAVAILABLE';
-        const contentVersion: string = this.countryConfigService.isFeatureEnabled(FeatureType.COUNTRY_CONTENT, this.country) ?
-          'v' + this.countryConfigService.getFeatureVersion(FeatureType.COUNTRY_CONTENT, this.country).toString() : 'UNAVAILABLE';
+        const headerVersion: string = this.countryConfigService.isFeatureEnabled(FeatureType.COUNTRY_HEADER, countryCode) ?
+          'v' + this.countryConfigService.getFeatureVersion(FeatureType.COUNTRY_HEADER, countryCode).toString() : 'UNAVAILABLE';
+        const contentVersion: string = this.countryConfigService.isFeatureEnabled(FeatureType.COUNTRY_CONTENT, countryCode) ?
+          'v' + this.countryConfigService.getFeatureVersion(FeatureType.COUNTRY_CONTENT, countryCode).toString() : 'UNAVAILABLE';
         console.log('Selected country: ', this.country.name);
         console.log('Header: ', headerVersion);
         console.log('Content: ', contentVersion);

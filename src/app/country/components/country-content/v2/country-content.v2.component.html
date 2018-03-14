@@ -1,16 +1,21 @@
 <div class="country-content">
+
   <div class="data-row">
     <span class="data-label">Area:</span>
     <span class="data-value">{{data.country.area | number}}</span>
   </div>
+
   <div class="data-row">
     <span class="data-label">Population:</span>
     <span class="data-value">{{data.country.population | number}}</span>
   </div>
+
+  <!-- New content for v2 below -->
   <div class="data-row">
     <span class="data-label">Capital:</span>
     <span class="data-value">{{data.country.capital}}</span>
   </div>
+
   <div class="data-row">
     <span class="data-label">Anthem:</span>
     <audio controls src="{{data.country.anthemURL}}">

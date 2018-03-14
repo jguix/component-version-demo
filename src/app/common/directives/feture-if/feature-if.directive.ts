@@ -1,14 +1,13 @@
 import { Directive, Input, OnChanges, SimpleChanges, TemplateRef, ViewContainerRef } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { CountryConfigService } from '../../services/country-config/country-config.service';
-import { Country } from '../../../country/services/country.model';
 
 @Directive({
   selector: '[appFeatureIf]'
 })
 export class FeatureIfDirective implements OnChanges {
   private _featureName: string;
-  private _country: Country;
+  private _countryCode: string;
   private _minVersion = 0;
   private _hasView: boolean;
 
@@ -17,8 +16,8 @@ export class FeatureIfDirective implements OnChanges {
   }
 
   @Input()
-  set appFeatureIfCountry(value: Country) {
-    this._country = value;
+  set appFeatureIfCountryCode(value: string) {
+    this._countryCode = value;
   }
 
   @Input()
@@ -38,8 +37,8 @@ export class FeatureIfDirective implements OnChanges {
   }
 
   private applyChanges(): void {
-    const featureEnabled = this.countryConfigService.isFeatureEnabled(this._featureName, this._country);
-    const featureVersion = this.countryConfigService.getFeatureVersion(this._featureName, this._country) || 0;
+    const featureEnabled = this.countryConfigService.isFeatureEnabled(this._featureName, this._countryCode);
+    const featureVersion = this.countryConfigService.getFeatureVersion(this._featureName, this._countryCode) || 0;
     if (featureEnabled && featureVersion >= this._minVersion) {
       this.embedTemplate(true);
     } else {

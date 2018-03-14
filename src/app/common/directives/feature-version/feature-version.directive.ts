@@ -2,14 +2,13 @@ import { ComponentFactoryResolver, ComponentRef, Directive, Input, OnChanges, Si
 import { CountryConfigService } from '../../services/country-config/country-config.service';
 import { DynamicComponentService } from '../../services/dynamic-component/dynamic-component.service';
 import { DynamicComponent } from '../../services/dynamic-component/dynamic-component.model';
-import { Country } from '../../../country/services/country.model';
 
 @Directive({
   selector: '[appFeatureVersion]'
 })
 export class FeatureVersionDirective implements OnChanges {
   private _featureName: string;
-  private _country: Country;
+  private _countryCode: string;
   private _data: any;
   private componentRef: ComponentRef<DynamicComponent>;
 
@@ -18,8 +17,8 @@ export class FeatureVersionDirective implements OnChanges {
   }
 
   @Input()
-  set appFeatureVersionCountry(value: Country) {
-    this._country = value;
+  set appFeatureVersionCountryCode(value: string) {
+    this._countryCode = value;
   }
 
   @Input()
@@ -39,8 +38,8 @@ export class FeatureVersionDirective implements OnChanges {
   }
 
   private applyChanges(): void {
-    const featureEnabled = this.countryConfigService.isFeatureEnabled(this._featureName, this._country);
-    const featureVersion = this.countryConfigService.getFeatureVersion(this._featureName, this._country) || 0;
+    const featureEnabled = this.countryConfigService.isFeatureEnabled(this._featureName, this._countryCode);
+    const featureVersion = this.countryConfigService.getFeatureVersion(this._featureName, this._countryCode) || 0;
     const dynamicComponent = this.dynamicComponentService.getComponent(this._featureName, featureVersion);
 
     this.clearViewContainer();

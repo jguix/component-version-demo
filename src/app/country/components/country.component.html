@@ -6,10 +6,10 @@
 
     <!-- Dynamic CountryContentComponent retrieved according to the selected country -->
     <!-- Data is provided dinamically through the data property -->
-    <ng-template *appFeatureVersion="'COUNTRY_CONTENT';country:country;data:{country: country}"></ng-template>
+    <ng-template *appFeatureVersion="'COUNTRY_CONTENT';countryCode:country.code;data:{country: country}"></ng-template>
 
     <!-- Informative div provided in case the COUNTRY_CONTENT feature is not available for a certain country -->
-    <div class="no-feature" *appFeatureElse="'COUNTRY_CONTENT';country:country">
+    <div class="no-feature" *appFeatureElse="'COUNTRY_CONTENT';countryCode:country.code">
       This feature is not yet available in {{country.name}}.
     </div>
   </div>
