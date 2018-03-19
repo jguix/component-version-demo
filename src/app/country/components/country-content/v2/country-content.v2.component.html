@@ -2,23 +2,23 @@
 
   <div class="data-row">
     <span class="data-label">Area:</span>
-    <span class="data-value">{{data.country.area | number}}</span>
+    <span class="data-value">{{country?.area | number}}</span>
   </div>
 
   <div class="data-row">
     <span class="data-label">Population:</span>
-    <span class="data-value">{{data.country.population | number}}</span>
+    <span class="data-value">{{country?.population | number}}</span>
   </div>
 
   <!-- New content for v2 below -->
   <div class="data-row">
     <span class="data-label">Capital:</span>
-    <span class="data-value">{{data.country.capital}}</span>
+    <span class="data-value">{{country?.capital}}</span>
   </div>
 
   <div class="data-row">
     <span class="data-label">Anthem:</span>
-    <audio controls src="{{data.country.anthemURL}}">
+    <audio controls src="{{country?.anthemURL}}">
       Your browser does not support the audio element.
     </audio>
   </div>

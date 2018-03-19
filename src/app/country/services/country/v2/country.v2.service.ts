@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Country, DEFAULT_COUNTRY_LIST } from './country.model';
+import { CountryInterface } from '../country.interface';
+import { Country, DEFAULT_COUNTRY_LIST_V2 } from '../country.model';
 
 @Injectable()
-export class CountryService {
-  private countries: Array<Country> = DEFAULT_COUNTRY_LIST;
+export class CountryV2Service implements CountryInterface {
+  private countries: Array<Country> = DEFAULT_COUNTRY_LIST_V2;
 
   getCountryList(): Array<Country> {
     return this.countries;

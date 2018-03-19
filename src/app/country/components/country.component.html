@@ -1,20 +1,20 @@
 <div class="country-wrapper">
 
-  <div *ngIf="country != null">
+  <div *ngIf="countryCode != null">
     <!-- Static CountryHeaderComponent -->
-    <app-country-header [country]="country"></app-country-header>
+    <app-country-header [countryCode]="countryCode"></app-country-header>
 
     <!-- Dynamic CountryContentComponent retrieved according to the selected country -->
     <!-- Data is provided dinamically through the data property -->
-    <ng-template *appFeatureVersion="'COUNTRY_CONTENT';countryCode:country.code;data:{country: country}"></ng-template>
+    <ng-template *appFeatureVersion="'COUNTRY_CONTENT';countryCode:countryCode;data:{countryCode: countryCode}"></ng-template>
 
     <!-- Informative div provided in case the COUNTRY_CONTENT feature is not available for a certain country -->
-    <div class="no-feature" *appFeatureElse="'COUNTRY_CONTENT';countryCode:country.code">
+    <div class="no-feature" *appFeatureElse="'COUNTRY_CONTENT';countryCode:countryCode">
       This feature is not yet available in {{country.name}}.
     </div>
   </div>
 
-  <div class="no-country" *ngIf="country == null">
+  <div class="no-country" *ngIf="countryCode == null">
     Please select a country.
   </div>
 

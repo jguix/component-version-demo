@@ -11,7 +11,34 @@ export interface Country {
   anthemURL?: string;
 }
 
-export const DEFAULT_COUNTRY_LIST: Array<Country> = [{
+export const DEFAULT_COUNTRY_LIST_V1: Array<Country> = [{
+  code: 'es',
+  name: 'Spain',
+  area: 505370,
+  population: 46549045,
+}, {
+  code: 'fr',
+  name: 'France',
+  area: 643801,
+  population: 67158000,
+}, {
+  code: 'it',
+  name: 'Italy',
+  area: 301340,
+  population: 60665551,
+}, {
+  code: 'pt',
+  name: 'Portugal',
+  area: 92090,
+  population: 10562178,
+}, {
+  code: 'uk',
+  name: 'United Kingdom',
+  area: 243610,
+  population: 65217975,
+}];
+
+export const DEFAULT_COUNTRY_LIST_V2: Array<Country> = [{
   code: 'es',
   name: 'Spain',
   area: 505370,

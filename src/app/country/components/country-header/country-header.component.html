@@ -3,5 +3,5 @@
 
 <!-- Dynamic part of the template -->
 <!-- Only displayed for countries implementing the COUNTRY_HEADER feature with version >= 2 -->
-<div *appFeatureIf="'COUNTRY_HEADER';countryCode:country.code;version:2"
-     class="flag {{country.code}}"></div>
+<div *appFeatureIf="'COUNTRY_HEADER';countryCode:countryCode;version:2"
+     class="flag {{countryCode}}"></div>

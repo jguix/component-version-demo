@@ -1,14 +1,14 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { CountryService } from './country.service';
+import { CountryV1Service } from './country.v1.service';
 
 describe('CountryService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [CountryService]
+      providers: [CountryV1Service]
     });
   });
 
-  it('should be created', inject([CountryService], (service: CountryService) => {
+  it('should be created', inject([CountryV1Service], (service: CountryV1Service) => {
     expect(service).toBeTruthy();
   }));
 });
