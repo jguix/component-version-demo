@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { CountryConfigService } from '../../common/services/country-config/country-config.service';
-import { FeatureType } from '../../common/services/country-config/country-config.model';
+import { CountryConfigService } from '../../shared/services/country-config/country-config.service';
+import { FeatureType } from '../../shared/services/country-config/country-config.model';
 import { CountryService } from '../services/country.service';
 import { CountryOption } from '../../country-selector/services/country-option.model';
 import { Country } from '../services/country.model';

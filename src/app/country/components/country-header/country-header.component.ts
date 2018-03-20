@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Country } from '../../services/country.model';
-import { FeatureType } from '../../../common/services/country-config/country-config.model';
-import { CountryConfigService } from '../../../common/services/country-config/country-config.service';
+import { FeatureType } from '../../../shared/services/country-config/country-config.model';
+import { CountryConfigService } from '../../../shared/services/country-config/country-config.service';
 
 @Component({
   selector: 'app-country-header',
