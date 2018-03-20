@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { CountrySelectorComponent } from './country-selector/components/country-selector.component';
 import { CountryComponent } from './country/components/country.component';
@@ -22,10 +23,7 @@ import { DynamicComponentService } from './shared/services/dynamic-component/dyn
     CountryComponent,
     CountryHeaderComponent,
     CountryContentV1Component,
-    CountryContentV2Component,
-    FeatureIfDirective,
-    FeatureElseDirective,
-    FeatureVersionDirective
+    CountryContentV2Component
   ],
   entryComponents: [
     CountryContentV1Component,
@@ -33,13 +31,12 @@ import { DynamicComponentService } from './shared/services/dynamic-component/dyn
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   providers: [
-    CountryConfigService,
     CountryOptionService,
-    CountryService,
-    DynamicComponentService
+    CountryService
   ],
   bootstrap: [AppComponent]
 })
