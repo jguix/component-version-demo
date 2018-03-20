@@ -1,5 +1,5 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
-import { DynamicComponent } from '../../../../common/services/dynamic-component/dynamic-component.model';
+import { DynamicComponent } from '../../../../shared/services/dynamic-component/dynamic-component.model';
 import { Country } from '../../../services/country/country.model';
 import { CountryV1Service } from '../../../services/country/v1/country.v1.service';
 
