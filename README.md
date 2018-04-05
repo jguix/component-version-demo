@@ -1,6 +1,10 @@
 # Features
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+A demo showing how to use different component versions that coexist in the same codebase, making use of directives and dynamic components.
+
+Live demo:
+
+https://jguix.github.io/component-version-demo/
 
 ## Development server
 
